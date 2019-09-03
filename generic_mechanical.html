@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Spatial by TEMPLATED</title>
+		<title>Mechanical Design</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -15,12 +15,14 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1>
+				<h1><strong><a href="index.html">The Velvet Thunder</a></strong> Autonomous Robot</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="generic_overview.html">Design overview</a></li>
+						<li><a href="generic_software.html">Software</a></li>
+						<li><a href="generic_mechanical.html">Mechanical</a></li>
+						<li><a href="generic_electrical.html">Electrical</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,14 +34,33 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Generic</h2>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						<h2>Mechanical Design</h2>
+						<p></p>
 					</header>
 
 					<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+					<h2>Chassis</h2>
+					<p>As the chassis supports the arm, the stone storage mechanism, the circuitry and the drivetrain, as well as having to withstand collisions by other robots, sturdiness and stability was prioritized. To this end, the chassis was made as wide and long as the competition rules would allow. 3mm hardboard was used for most of its construction as it is light, relatively hard and insulating. <br /> <br />
+						The chassis is 3-wheeled to ensure that the position of the chassis is fully defined even when the robot is placed awkwardly. This prevents the driving wheels of the robot from losing contact with the ground. <br /><br />
+						Each of the 2 driving wheels is powered by a Geared Barber Coleman motor, but geared up with a 1:2 gear ratio. While this reduces the maximum speed of the robot, it is a necessary addition as the final mass of the robot is quite considerable. Furthermore, this change allowed us to ensure a 1:2 safety ratio for torque even when ascending the ramp on the course. <br /><br />
+						Circuit boards are located on the underside of the chassis, and are positioned in a planar manner. As every part of the circuitry is easily accessible by oscilloscope or multimeter, the time taken to debug or replace circuitry is minimized. <br /><br />
+						The interior cavity of the chassis, containing motors and wiring, is also fully accessible; The chassis is held together by several L-brackets on the corners, so the whole chassis could be disassembled or reassembled relatively quickly.
+						</p>
+					
+					<h2>Arm</h2>
+					<p>Our robot’s arm consists of three joints: shoulder, elbow, and wrist; akin to a human arm. There are four points of actuation, one for each joint and one for opening/closing the claw. Before the construction of the arm, we estimated the mass of each component of the arm using Solidworks and used them to calculate the torque required by each actuation point. Since the torque required at each point is different based on the orientation of the arm, we considered the boundary cases to determine the maximum and minimum torques. From our calculations we decided on the following servos/motors for each actuation point:<br /><br />
+
+					</p>
+					
+					<h2>Stone Storage System</h2>
+					<p>For our stone storage system we created a mock gauntlet. Our mock gauntlet only had 4 cavities because our strategy only involved scoring 4 stones at the most. Our mock gauntlet was designed such that the cavities containing the stones would line up with the top four holes in the competition field’s gauntlet by driving right up to the gauntlet. <br /><br />
+						Since we only had to deposit the stones once during a match we designed a lid that would open all the cavities at once to drop the stones. This was done using a small servo motor and a custom made aluminum guide to mark the end points of movement.<br /><br />
+						While driving, the mock gauntlet would be held 80o - 90o from the horizontal to avoid damaging our mock gauntlet in the case of a robot-robot collision. To prevent stones from falling out while driving the cavities in the mock gauntlet were designed to be angled funnels as shown in the image below. This decreases the likelihood of stones falling out. The option to attach non-slip material in the top half of the funnels was also an option in the case that the angled funnels were not enough for the prevention of stones falling out.<br /><br />
+						>>INSERT: Image of funnels<br /><br />
+						The competition stage gauntlet was angled 30o of the competition surface (the horizontal). To account for this we designed the arms that attached out mock gauntlet to the chassis to have an angle of 30o. This means that when the mock gauntlet arms touch the robot’s chassis, the mock gauntlet will be parallel with the competition stage gauntlet. A large servo (HK15138 Standard Analog Servo) was used for the actuation of the mock gauntlet arms.<br /><br />
+						The funnels were 3D printed due to their unusual geometry. The guide was custom machined out of aluminum using a lathe. The mock gauntlet arms were waterjet cut out of 0.7 mm aluminum which was bent as shown in the image below to provide strength and create the desired 30o angle. <br /><br />
+						>>INSERT: Image of mock gauntlet
+						</p>
 
 				</div>
 			</section>
